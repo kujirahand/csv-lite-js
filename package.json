@@ -2,7 +2,7 @@
   "name": "csv-lite-js",
   "version": "0.0.2",
   "description": "CSV library lite",
-  "main": "csv-lite.js",
+  "main": "index.js",
   "dependencies": {
   },
   "scripts": {

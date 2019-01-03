@@ -1,5 +1,5 @@
 // test
-var CSV = require('../csv-lite');
+var CSV = require('../lib/csv-lite');
 var assert = require('assert');
 
 describe('stringify', function () {
