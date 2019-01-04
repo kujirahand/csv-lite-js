@@ -27,6 +27,14 @@ describe('stringify', function () {
     var csv = CSV.stringify(a);
     assert.equal(csv, "name,age\r\n\"aaa\r\nbbb\",30\r\n");
   });
+  it('value in CRLF', function () {
+    var a = [
+      ['name', 'age'],
+      ["aaa\nbbb", 30],
+    ];
+    var csv = CSV.stringify(a);
+    assert.equal(csv, "name,age\r\n\"aaa\r\nbbb\",30\r\n");
+  });
 });
 
 describe('parse CSV', function () {
