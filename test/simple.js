@@ -55,6 +55,14 @@ describe('parse CSV', function () {
     assert.equal(d[1][1], '2');
     assert.equal(d[1][2], '3');
   });
+  it('blank cell', function () {
+    var d = CSV.parse('1,,3,4\n5,6,7,8');
+    assert.equal(d[0][0], '1');
+    assert.equal(d[0][1], '');
+    assert.equal(d[0][2], '3');
+    assert.equal(d[0][3], '4');
+    assert.equal(d[1][0], '5');
+  });
 });
 
 describe('parse TSV', function () {
@@ -72,6 +80,14 @@ describe('parse TSV', function () {
     assert.equal(a[1][0], "g,h,i");
     assert.equal(a[1][1], "j,k,l");
     assert.equal(a[2][2], "q");
+  });
+  it('tsv blank cell', function () {
+    var tsv = "1\t\t3\n4\t5\t6";
+    var a = CSV.parse(tsv, "\t");
+    assert.equal(a[0][0], "1");
+    assert.equal(a[0][1], "");
+    assert.equal(a[0][2], "3");
+    assert.equal(a[1][0], "4");
   });
 });
 
