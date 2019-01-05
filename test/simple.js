@@ -71,6 +71,15 @@ describe('parse CSV', function () {
     assert.equal(d[0][3], '4');
     assert.equal(d[1][0], '5');
   });
+
+  it('Dialect of Excel', () => {
+    const d = CSV.parse('"1",="0120=444=444",=3,4\n5,6,7,8')
+    assert.equal(d[0][0], '1');
+    assert.equal(d[0][1], '0120=444=444');
+    assert.equal(d[0][2], '=3');
+    assert.equal(d[0][3], '4');
+    assert.equal(d[1][0], '5');
+  });
 });
 
 describe('parse TSV', function () {
@@ -96,6 +105,15 @@ describe('parse TSV', function () {
     assert.equal(a[0][1], "");
     assert.equal(a[0][2], "3");
     assert.equal(a[1][0], "4");
+  });
+
+  it('Dialect of Excel', () => {
+    const d = CSV.parse('"1"\t="0120=444=444"\t=3\t4\n5\t6\t7\t8', '\t')
+    assert.equal(d[0][0], '1');
+    assert.equal(d[0][1], '0120=444=444');
+    assert.equal(d[0][2], '=3');
+    assert.equal(d[0][3], '4');
+    assert.equal(d[1][0], '5');
   });
 });
 
