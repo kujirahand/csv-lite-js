@@ -73,6 +73,15 @@ describe('parse TSV', function () {
     assert.equal(a[1][1], "j,k,l");
     assert.equal(a[2][2], "q");
   });
+  it('tsv with empty elements', () => {
+    const a = CSV.parse("1\t\t3\n4\t5\t6", "\t");
+    assert.equal(a[0][0], 1);
+    assert.equal(a[0][1], '');
+    assert.equal(a[0][2], 3);
+    assert.equal(a[1][0], 4);
+    assert.equal(a[1][1], 5);
+    assert.equal(a[1][2], 6);
+  });
 });
 
 
