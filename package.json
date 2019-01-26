@@ -1,6 +1,6 @@
 {
   "name": "csv-lite-js",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "CSV/TSV library",
   "main": "index.js",
   "dependencies": {
