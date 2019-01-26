@@ -117,5 +117,23 @@ describe('parse TSV', function () {
   });
 });
 
+describe('parse test', function () {
+  it('end of line bug(#7)', () => {
+    const d = CSV.parse('a,b,c\nd, e, f,\ng, h, i\n', ',');
+    assert.equal(d[1][0], 'd');
+    assert.equal(d[1][1], 'e');
+    assert.equal(d[1][2], 'f');
+    assert.equal(d[2][0], 'g');
+    assert.equal(d[2][1], 'h');
+    assert.equal(d[2][2], 'i');
+    
+    const e = CSV.parse('aa, bb, cc,\ndd, ee, ff,\n', ',');
+    assert.equal(e[1][0], 'dd');
+    assert.equal(e[1][1], 'ee');
 
+    const f = CSV.parse('aa, "bb\nbb", "cc",\ndd, ee, ff,\n', ',');
+    assert.equal(f[1][0], 'dd');
+    assert.equal(f[1][1], 'ee');
+  });
+});
 
