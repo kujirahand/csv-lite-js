@@ -1,6 +1,6 @@
 // test CSVObject
-var CSV = require('../index.js');
-var assert = require('assert');
+import CSV from '../index.js'
+import assert from 'assert'
 
 describe('CSVObject', function () {
   it('set/get', function () {

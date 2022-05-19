@@ -3,20 +3,21 @@
   "version": "0.0.7",
   "description": "CSV/TSV library",
   "main": "index.js",
-  "dependencies": {
-  },
+  "type": "module",
   "scripts": {
+    "tsc": "tsc --watch",
     "test": "mocha"
   },
   "devDependencies": {
-    "mocha": "~2.3.4"
+    "@types/node": "^17.0.34",
+    "mocha": "^10.0.0",
+    "typescript": "^4.6.4"
   },
   "author": "kujirahand",
   "license": "MIT",
   "private": false,
   "repository": {
-    "type":"git",
-    "url":"https://github.com/kujirahand/csv-lite-js"
+    "type": "git",
+    "url": "https://github.com/kujirahand/csv-lite-js"
   }
 }
-

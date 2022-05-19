@@ -1,9 +1,10 @@
 // test format
-var CSV = require('../');
-var CSVObject = CSV.CSVObject;
-var assert = require('assert');
+import CSV from '../index.js'
+import assert from 'assert'
 
-describe('format:stringify', function () {
+var CSVObject = CSV.CSVObject;
+
+describe('format::stringify', function () {
   it('eol', function () {
     var csv = new CSVObject();
     csv.options.eol = "\n";

@@ -13,24 +13,20 @@ $ npm install csv-lite-js
 Simple static method:
 
 ```javascript
-var CSV = require('csv-lite-js');
-
-// parse CSV string
-var txt = "1,2,3\n11,22,33\n111,222,333";
-var a = CSV.parse(txt);
-console.log(a[0][0]); // 1
-console.log(a[1][1]); // 22
+import CSV from 'csv-lite-js'
+const txt = "1,2,3\n11,22,33\n111,222,333";
+const r = CSV.parse(txt);
+console.log(CSV.stringify(r));
 ```
 
 OOP method:
 
 ```javascript
-var CSVObject = require('csv-lite-js').CSVObject;
-
-var csv = new CSVObject();
-csv.parse("name,age\r\nAki,14\r\nHuyu,20");
-console.log(csv.getCell(1,0)); // Aki
-console.log(csv.getCell(2,0)); // Huyu
+var csv = new CSV.CSVObject()
+csv.parse("name,age\r\nAki,14\r\nHuyu,20")
+console.log(csv.getCell(1,0)) // Aki
+console.log(csv.getCell(2,0)) // Huyu
+console.log(csv.toString())
 ```
 
 ## Parse and Stringify
@@ -74,6 +70,8 @@ console.log(a[1][1]); // 22
 
 ## OOP method
 
+CSV.CSVObject has many method
+
 - CSVObject.toString()
 - CSVObject.parse(csv_str, delimiter)
 - CSVObject.getCell(row, col)
@@ -97,7 +95,5 @@ console.log(a[1][1]); // 22
 ## Test module
 
 ```
-$ mocha test/simple.js
+$ mocha
 ```
-
-

@@ -1,6 +1,7 @@
 // index.js for csv-lite
-import { CSVObject } from './lib/csv-object.js';
-import { resetEnv, parse, stringify, options, replaceEolMark } from './lib/csv-lite.js';
+import {CSVObject} from './lib/csv-object.js'
+import {resetEnv, parse, stringify, options, replaceEolMark} from './lib/csv-lite.js'
+
 export default {
     resetEnv,
     parse,
@@ -11,4 +12,4 @@ export default {
     CRLF: '\r\n',
     CR: '\r',
     LF: '\n',
-};
+}

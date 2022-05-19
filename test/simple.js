@@ -1,8 +1,9 @@
 // test
-var CSV = require('../lib/csv-lite');
-var assert = require('assert');
+import CSV from '../index.js'
+import assert from 'assert'
 
-describe('stringify', function () {
+describe('simple::stringify', function () {
+  CSV.resetEnv()
   var txt = CSV.stringify([
     [1,2,3],
     [4,5,6]
@@ -12,6 +13,7 @@ describe('stringify', function () {
   });
 
   it('value in comma', function () {
+    CSV.resetEnv()
     var a = [
       ['name', 'age'],
       ['Daniel,K', 30],
@@ -20,6 +22,7 @@ describe('stringify', function () {
     assert.equal(csv, "name,age\r\n\"Daniel,K\",30\r\n");
   });
   it('value in CRLF', function () {
+    CSV.resetEnv()
     var a = [
       ['name', 'age'],
       ["aaa\r\nbbb", 30],
@@ -32,7 +35,7 @@ describe('stringify', function () {
       ['name', 'age'],
       ["aaa\nbbb", 30],
     ];
-    var csv = CSV.stringify(a);
+    var csv = CSV.stringify(a, ',', CSV.CRLF);
     assert.equal(csv, "name,age\r\n\"aaa\r\nbbb\",30\r\n");
   });
 });
