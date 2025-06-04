@@ -49,6 +49,16 @@ describe('CSVObject', function () {
     assert.equal(res[0][0], 'Sanji');
     assert.equal(res[1][0], 'Zoro');
   });
+
+  it('parse with custom delimiter', function () {
+    const csv = new CSV.CSVObject({ delimiter: '\t', eol: '\n' });
+    csv.parse('a\tb\nc\td');
+    assert.equal(csv.getCell(0, 0), 'a');
+    assert.equal(csv.getCell(0, 1), 'b');
+    assert.equal(csv.getCell(1, 0), 'c');
+    assert.equal(csv.getCell(1, 1), 'd');
+    assert.equal(CSV.options.delimiter, ',');
+  });
 });
 
 
