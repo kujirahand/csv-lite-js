@@ -21,8 +21,8 @@ export function parse(txt: string, delimiter: string|undefined = undefined): str
   }
   // check txt
   txt = "" + txt + "\n";
-  // convert CRLF to LF, and CR to LF
-  txt = txt.replace(/(\r\n|\r)/g, "\n");
+  // convert CRLF to LF
+  txt = txt.replace(/\r\n/g, "\n");
   // trim right
   txt = txt.replace(/\s+$/, '')+"\n";
   // set pattern
