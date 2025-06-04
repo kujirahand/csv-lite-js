@@ -20,6 +20,9 @@ export class CSVObject {
   }
   
   parse (str: string, delimiter: string|undefined = undefined) {
+    if (delimiter === undefined) {
+      delimiter = this.options.delimiter
+    }
     this.rows = parse(str, delimiter)
   }
 
