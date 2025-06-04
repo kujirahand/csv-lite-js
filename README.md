@@ -1,6 +1,6 @@
 # csv-lite-js
 
-CSV Library for Browser
+CSV Library for Browsers
 
 ## Install
 
@@ -31,7 +31,7 @@ console.log(csv.toString())
 
 ## Parse and Stringify
 
-method:
+methods:
 
 - CSV.parse()
 - CSV.stringify()
@@ -55,7 +55,7 @@ var c = CSV.stringify(a);
 console.log(c); // 1,2,3\n4,5,6
 ```
 
-## TSV (Tab separated value)
+## TSV (Tab-separated values)
 
 ```javascript
 // set tsv option
@@ -68,9 +68,9 @@ console.log(a[0][0]); // 1
 console.log(a[1][1]); // 22
 ```
 
-## OOP method
+## OOP methods
 
-CSV.CSVObject has many method
+CSV.CSVObject has many methods
 
 - CSVObject.toString()
 - CSVObject.parse(csv_str, delimiter)
