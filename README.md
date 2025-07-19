@@ -2,13 +2,20 @@
 
 CSV Library for Browsers
 
+## Overview
+
+`csv-lite-js` is a lightweight library for handling CSV and TSV data in both
+browser and Node.js environments. It provides simple functions to parse CSV
+text into arrays, convert arrays back to CSV, and offers an object-oriented API
+for editing CSV content.
+
 ## Install
 
 ```
 $ npm install csv-lite-js
 ```
 
-## Usage
+## Basic Usage
 
 Simple static method:
 
